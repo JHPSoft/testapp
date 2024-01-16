@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Style is imported but not created right now-->
+        <link rel="stylesheet" href="./css/index.css">
+        <title>TestApp</title>
+        <style>
+            #mainLayout, #settingsLayout, #playLayout, #historyLayout {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.3s ease; /* 트랜지션 효과를 추가합니다. */
+            }
+
+            .hidden {
+                display: none;
+            }
+            #mainLayout {
+                background-color: green;
+                transform: translate(0, 0); /* 초기 위치는 왼쪽 상단입니다. */
+            }
+
+            #settingsLayout {
+                background-color: aqua;
+                transform: translate(-100%, 0); /* 초기 위치를 왼쪽으로 설정합니다. */
+            }
+            #playLayout {
+                background-color: yellow;
+            transform: translate(100%, 0); /* 초기 위치를 오른쪽으로 설정합니다. */
+            }
+            #historyLayout {
+                background-color: orange;
+                transform: translate(0, 100%); /* 초기 위치를 아래로 설정합니다. */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <div id="mainLayout">
+                <!-- 메인 레이아웃 내용 -->
+                <button onclick="moveToSettings()">설정으로 이동</button>
+                <button onclick="moveToPlay()">Play로 이동</button>
+                <button onclick="moveToHistory()">History로 이동</button>
+            </div>
+            
+            <div id="settingsLayout">
+                <!-- 설정 레이아웃 내용 -->
+                <button onclick="moveToMain()">메인으로 이동</button>
+            </div>
+            <div id="playLayout">
+              <!-- Play 레이아웃 내용 -->
+              <button onclick="moveToMain()">메인으로 이동</button>
+            </div>
+            <div id="historyLayout">
+              <!-- History 레이아웃 내용 -->
+              <button onclick="moveToMain()">메인으로 이동</button>
+            </div>
+        </div>
+    <script src="./scripts/index.js"></script>
+    <script>
+        function moveToMain() {
+            document.getElementById('mainLayout').style.transform = 'translate(0, 0)';
+            document.getElementById('settingsLayout').style.transform = 'translate(-100%, 0)';
+            document.getElementById('playLayout').style.transform = 'translate(100%, 0)';
+            document.getElementById('historyLayout').style.transform = 'translate(0, 100%)';
+        }
+
+        function moveToSettings() {
+            document.getElementById('mainLayout').style.transform = 'translate(100%, 0)';
+            document.getElementById('settingsLayout').style.transform = 'translate(0, 0)';
+            document.getElementById('playLayout').style.transform = 'translate(100%, 0)';
+            document.getElementById('historyLayout').style.transform = 'translate(0, 100%)';
+        }
+
+        function moveToPlay() {
+            document.getElementById('mainLayout').style.transform = 'translate(-100%, 0)';
+            document.getElementById('settingsLayout').style.transform = 'translate(-100%, 0)';
+            document.getElementById('playLayout').style.transform = 'translate(0, 0)';
+            document.getElementById('historyLayout').style.transform = 'translate(0, 100%)';
+        }
+
+        function moveToHistory() {
+            document.getElementById('mainLayout').style.transform = 'translate(0, -100%)';
+            document.getElementById('settingsLayout').style.transform = 'translate(-100%, 0)';
+            document.getElementById('playLayout').style.transform = 'translate(100%, 0)';
+            document.getElementById('historyLayout').style.transform = 'translate(0, 0)';
+        }
+
+
+    </script>
+    </body>
+</html>
