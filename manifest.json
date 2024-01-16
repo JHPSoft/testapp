@@ -1,0 +1,25 @@
+{
+  "background_color": "#ffffff",
+  "description": "just test app before develope plank app",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "PlankApp",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "PlankApp",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "health"
+  ],
+  "screenshots": [],
+  "icons": [],
+  "shortcuts": [
+    {
+      "name": "Main",
+      "url": "/",
+      "description": "main page"
+    }
+  ],
+  "id": "test plank app"
+}
